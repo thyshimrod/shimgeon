@@ -1,0 +1,53 @@
+<rml>
+	<head>
+		<title>death</title>
+		<link type="text/template" href="window.rml" />
+		<style>
+			body
+			{
+				width: 1000px;
+				height: 600px;
+				position: absolute;
+				margin: auto;
+			}
+
+			div#title_bar div#icon
+			{
+				icon-image-s: 230px 281px;
+				icon-image-t: 152px 191px;
+
+				display: none;
+			}
+
+			form div
+			{
+				width: 200px;
+				margin: auto;
+			}
+		</style>
+	<script>
+from shimgeon.game.gamestate import *	
+from shimgeon.sprite.character import *
+import os,sys
+
+def onLoad(doc):
+	pass
+	
+def onOk(doc):
+	Character.getInstance().destroy()
+	gameState.getInstance().setState(C_MENU_START)
+	
+	
+def onCancel(doc):
+	doc.Hide()
+	</script>
+	</head>
+	<body template="pywindow" onLoad="onLoad(document);">
+	<div style="position:absolute; top:50px; left:50px;z-index:10;" id="divbutton">
+		<button class="topress" style="width:100px;height:30px;" onclick="onOk(document)"  id="btnok"><span>Rejouer</span></button>
+	</div>
+	<div id="content">
+	</div>
+	
+	</body>
+</rml>

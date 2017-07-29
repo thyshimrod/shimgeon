@@ -1,0 +1,57 @@
+<rml>
+	<head>
+		<title>downstair</title>
+		<link type="text/template" href="window.rml" />
+		<style>
+			body
+			{
+				width: 100px;
+				height: 200px;
+				position: absolute;
+				margin: auto;
+			}
+
+			div#title_bar div#icon
+			{
+				icon-image-s: 230px 281px;
+				icon-image-t: 152px 191px;
+
+				display: none;
+			}
+
+			form div
+			{
+				width: 200px;
+				margin: auto;
+			}
+		</style>
+	<script>
+from shimgeon.gui.rocketequip import *	
+
+def onLoad(doc):
+	doc.GetElementById("title").value="action"
+	
+def onEquip(doc):
+	RocketEquip.getInstance().onEquip(doc.GetElementById("iditem").value)
+	doc.Hide()
+	
+def onDelete(doc):
+	RocketEquip.getInstance().onDelete(doc.GetElementById("iditem").value)
+	doc.Hide()
+	
+def onCancel(doc):
+	doc.Hide()
+	</script>
+	</head>
+	<body template="pywindow" onLoad="onLoad(document);">
+	<div style="position:absolute; top:-10080px; left:20px;width:250px;">
+		<input type='hidden' id='iditem'/>
+		</div>
+		<div style="position:absolute; top:90px; left:20px;">
+			<button class="topress" style="width:50px;height:30px;display:Block;" id="btnko" onclick="onEquip(document);"><span>Equiper</span></button>
+		</div>
+		<div style="position:absolute; top:150px; left:20px;">
+			<button class="topress" style="width:50px;height:30px;display:Block;" onclick="onDelete(document)"  id="btnok"><span>Detruire</span></button>
+		</div>
+	</body>
+</rml>

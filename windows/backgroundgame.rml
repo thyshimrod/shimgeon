@@ -1,0 +1,56 @@
+<rml>
+	<head>
+		<title>backgroundgame</title>
+		<link type="text/template" href="window.rml" />
+		<style>
+			body
+			{
+				width: 100%;
+				height: 100%;
+				z-index: bottom;
+				z-index: -1;
+			}
+
+		</style>
+		<script>
+
+from shimgeon.gui.rocketgame import *
+
+def config(doc):
+	pass	
+	
+def equipSlot(idSlot):
+	rocketGame.getInstance().equipSlot(idSlot)
+	
+		</script>
+	</head>
+<body onLoad="config(document);">
+	<div style="position:absolute;top:10px;left:600px;width:50px;display:Block;" id="divlifeimg">
+			<img id="lifeimg"/>
+	</div>
+	<div style="position:absolute;top:30px;left:700px;width:150px;display:Block;" id="divname">
+	</div>
+	<div style="position:absolute;top:10px;left:10px;width:350px;display:Block;" id="divnamechar">
+	</div>
+	<div style="position:absolute;top:30px;left:100px;width:50px;display:Block;" id="divlifeimgchar">
+			<img id="lifeimgchar"/>
+	</div>
+	<div style="position:absolute;top:30px;left:10px;width:150px;display:Block;" id="divlifename">
+	</div>
+	<div style="position:absolute;top:50px;left:100px;width:50px;display:Block;" id="divxpimgchar">
+			<img id="xpchar"/>
+	</div>
+	<div style="position:absolute;top:50px;left:10px;width:150px;display:Block;" id="divxpname">
+	</div>
+	<div id="contentdegat">
+	</div>
+	<div id="contentfx">
+	</div>
+	<div style="position:absolute;top:630px;left:300px;width:50px;display:Block;">
+			<img id="slot1" src="../datas/gui/slot1.png" width=64 height=64 ondblclick="equipSlot(1)"/>
+	</div>
+	<div style="position:absolute;top:630px;left:380px;width:50px;display:Block;">
+			<img id="slot2" src="../datas/gui/slot1.png" width=64 height=64 ondblclick="equipSlot(2)"/>
+	</div>
+	</body>
+</rml>

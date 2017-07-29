@@ -1,0 +1,9 @@
+<fxs>
+	<fx>
+		<id>1</id>
+		<path>datas/effects/</path>
+		<name>frappe</name>
+		<extension>.png</extension>
+		<nbanimation>1</nbanimation>
+	</fx>
+</fxs>

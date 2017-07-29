@@ -1,0 +1,99 @@
+<rml>
+	<head>
+		<title>caract</title>
+		<link type="text/template" href="window.rml" />
+		<style>
+			body
+			{
+				width: 500px;
+				height: 400px;
+				position: absolute;
+				margin: auto;
+			}
+
+			div#title_bar div#icon
+			{
+				icon-image-s: 230px 281px;
+				icon-image-t: 152px 191px;
+
+				display: none;
+			}
+
+			form div
+			{
+				width: 200px;
+				margin: auto;
+			}
+		</style>
+	<script>
+	
+from shimgeon.sprite.character import *
+from shimgeon.gui.rocketcaract import *
+
+def onLoad(doc):
+	titleBar=doc.GetElementById("title")
+	titleBar.inner_rml="Caracteristiques"
+	
+
+def onCancel(doc):
+	doc.Hide()
+	
+def click(val):
+	RocketCaract.getInstance().addCarac(val)
+	
+	</script>
+	</head>
+	<body template="pywindow" onLoad="onLoad(document);">
+	<div style="position:absolute; top:120px; left:-150px;">
+			<button class="roundleft" style="width:100px;height:30px;" >Force</button>
+	</div>
+	<div style="position:absolute; top:170px; left:-150px;">
+			<button class="roundleft" style="width:100px;height:30px;" >Dexterite</button>
+	</div>
+	<div style="position:absolute; top:220px; left:-150px;">
+			<button class="roundleft" style="width:100px;height:30px;" >Constitution</button>
+	</div>
+	<div style="position:absolute; top:270px; left:-150px;">
+			<button class="roundleft" style="width:100px;height:30px;" >Intelligence</button>
+	</div>
+	<div style="position:absolute; top:320px; left:-150px;">
+			<button class="roundleft" style="width:100px;height:30px;" >Chance</button>
+	</div>
+	
+	<div style="position:absolute; top:120px; left:0px;">
+			<button class="roundleft" style="width:100px;height:30px;" id="force">Force</button>
+	</div>
+	<div style="position:absolute; top:170px; left:0px;">
+			<button class="roundleft" style="width:100px;height:30px;" id="dexterite">Dexterite</button>
+	</div>
+	<div style="position:absolute; top:220px; left:0px;">
+			<button class="roundleft" style="width:100px;height:30px;" id="constitution">Constitution</button>
+	</div>
+	<div style="position:absolute; top:270px; left:0px;">
+			<button class="roundleft" style="width:100px;height:30px;" id="intelligence">Intelligence</button>
+	</div>
+	<div style="position:absolute; top:320px; left:0px;">
+			<button class="roundleft" style="width:100px;height:30px;" id="chance">Chance</button>
+	</div>
+	
+	<div style="position:absolute; top:70px; left:320px;">
+			<button class="roundleft" style="width:30px;height:30px;diplay:None;" id="skillpoints" >+</button>
+	</div>
+	<div style="position:absolute; top:120px; left:320px;">
+			<button class="topress" style="width:30px;height:30px;diplay:None;" id="plusforce" onclick="click(1)">+</button>
+	</div>
+	<div style="position:absolute; top:170px; left:320px;">
+			<button class="topress" style="width:30px;height:30px;diplay:None;" id="plusdexterite" onclick="click(2)">+</button>
+	</div>
+	<div style="position:absolute; top:220px; left:320px;">
+			<button class="topress" style="width:30px;height:30px;diplay:None;" id="plusconstitution" onclick="click(3)">+</button>
+	</div>
+	<div style="position:absolute; top:270px; left:320px;">
+			<button class="topress" style="width:30px;height:30px;diplay:None;" id="plusintelligence" onclick="click(4)">+</button>
+	</div>
+	<div style="position:absolute; top:320px; left:320px;">
+			<button class="topress" style="width:30px;height:30px;diplay:None;" id="pluschance" onclick="click(5)">+</button>
+	</div>
+		
+	</body>
+</rml>

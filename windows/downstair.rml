@@ -1,0 +1,55 @@
+<rml>
+	<head>
+		<title>downstair</title>
+		<link type="text/template" href="window.rml" />
+		<style>
+			body
+			{
+				width: 100px;
+				height: 200px;
+				position: absolute;
+				margin: auto;
+			}
+
+			div#title_bar div#icon
+			{
+				icon-image-s: 230px 281px;
+				icon-image-t: 152px 191px;
+
+				display: none;
+			}
+
+			form div
+			{
+				width: 200px;
+				margin: auto;
+			}
+		</style>
+	<script>
+from shimgeon.game.gamestate import *	
+
+def onLoad(doc):
+	pass
+	
+def onOk(doc):
+	doc.Hide()
+	gameState.getInstance().setLevel(gameState.getInstance().getLevel()+1)
+	gameState.getInstance().setState(C_CHANGING_LEVEL)
+	
+	
+def onCancel(doc):
+	doc.Hide()
+	</script>
+	</head>
+	<body template="pywindow" onLoad="onLoad(document);">
+	<div style="position:absolute; top:80px; left:20px;width:250px;">
+		<span><p>Descendre?</p></span>
+		</div>
+		<div style="position:absolute; top:180px; left:20px;">
+			<button class="topress" style="width:50px;height:30px;display:Block;" id="btnko" onclick="onCancel(document);"><span>Non</span></button>
+		</div>
+		<div style="position:absolute; top:120px; left:20px;">
+			<button class="topress" style="width:50px;height:30px;display:Block;" onclick="onOk(document)"  id="btnok"><span>Oui</span></button>
+		</div>
+	</body>
+</rml>
